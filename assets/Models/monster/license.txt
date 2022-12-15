@@ -1,0 +1,11 @@
+Model Information:
+* title:	monster sculpt free
+* source:	https://sketchfab.com/3d-models/monster-sculpt-free-8d0cb17aefa34cffb4f4418f631d55e2
+* author:	endike (https://sketchfab.com/endike)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "monster sculpt free" (https://sketchfab.com/3d-models/monster-sculpt-free-8d0cb17aefa34cffb4f4418f631d55e2) by endike (https://sketchfab.com/endike) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

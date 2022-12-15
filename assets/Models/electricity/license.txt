@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lightning Bolt
+* source:	https://sketchfab.com/3d-models/lightning-bolt-d25e29d520a24f8cad9bc58417d70379
+* author:	JPScott1 (https://sketchfab.com/JPScott1)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lightning Bolt" (https://sketchfab.com/3d-models/lightning-bolt-d25e29d520a24f8cad9bc58417d70379) by JPScott1 (https://sketchfab.com/JPScott1) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

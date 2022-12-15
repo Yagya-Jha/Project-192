@@ -1,0 +1,11 @@
+Model Information:
+* title:	stylised stone
+* source:	https://sketchfab.com/3d-models/stylised-stone-b0d4eac7ba5444c184c5f3215e5279a0
+* author:	sandeep prasad (https://sketchfab.com/jimmyzac)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "stylised stone" (https://sketchfab.com/3d-models/stylised-stone-b0d4eac7ba5444c184c5f3215e5279a0) by sandeep prasad (https://sketchfab.com/jimmyzac) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

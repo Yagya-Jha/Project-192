@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+    <script src="./js/scatter.js"></script>
+    <script src="./js/power.js"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/enemy.js"></script>
+</head>
+<body>
+    <a-scene id="scene">
+        <a-assets>
+            <img id="fire" src="./assets/icons/fire.png" ></img>
+            <img id="water" src="./assets/icons/water.png">
+            <img id="electricity" src="./assets/icons/electricity.png">
+            <img id="stone" src="./assets/icons/stone.png">
+            <img id="wind" src="./assets/icons/wind.png">
+            <img id="empty" src="./assets/icons/empty.png">
+            <img id="bl" src="./assets/icons/BlackBG.JPG">
+            <a-asset-item id="monster_model" src="./assets/Models/monster/scene.gltf"></a-asset-item>
+            <audio id="winS" src="./assets/audio/Win.mp3"></audio>
+            <audio id="looseS" src="./assets/audio/Loose.mp3"></audio>
+            <audio id="tieS" src="./assets/audio/tie.mp3"></audio>
+            <audio id="footstep" src="./assets/audio/footStep.mp3"></audio>
+        </a-assets>
+
+        <a-entity id="environment" environment="preset: forest;lightPosition:-5 4 6; skyType:gradient; lighting:distant; dressingAmount: 400; dressingColor: #1a402a; grid: none;groundColor:#1a402a ; ground: hills; groundTexture: walkernoise; seed: 1; playArea: 1;"></a-entity>
+        <a-camera id="player" position="0 1 23"  look-controls="pointerLockEnabled: true;" wasd-controls="acceleration: 0">
+            <a-cursor id="cursor" color="red"></a-cursor>
+            <a-entity id="sound2" sound="src: #footstep; poolSize:2;autoplay: false; volume: 4;loop:false"></a-entity>
+            <a-entity id="txt" position="0 0.2 -0.5" rotation="0 0 0" text="font: exo2bold; align: center; width: 1; height:1; color: red;"></a-entity>
+            
+            <a-image id="icon_1" src="#empty" visible="false" width="0.012" height="0.015" position="-0.026 -0.07 -0.1"></a-image>
+            <a-image id="icon_2" src="#empty" visible="false" width="0.012" height="0.015" position="-0.013 -0.07 -0.1"></a-image>
+            <a-image id="icon_3" src="#empty" visible="false" width="0.012" height="0.015" position="-0.00 -0.07 -0.1"></a-image>
+            <a-image id="icon_4" src="#empty" visible="false" width="0.012" height="0.015" position="0.013 -0.07 -0.1"></a-image>
+            <a-image id="icon_5" src="#empty" visible="false" width="0.012" height="0.015" position="0.026 -0.07 -0.1"></a-image>
+                <a-image id="black" src="#bl" position="0 0 -0.1" opacity="0" visible="false"></a-image>
+                <a-entity id="fight" text="font: exo2bold; align: center; width: 0.2; height:0.2; color: red; value:Press 'z'\nTo Fight; " visible="false" position="0 0 -0.05"></a-entity>
+                <a-entity id="player_score" visible="false" position="-0.03 0.035 -0.05" text="font: exo2bold; align: center; width: 0.2; height:0.2; color: red; value:0; "></a-entity>
+                <a-entity id="enemy_score" visible="false" position="0.03 0.035 -0.05" text="font: exo2bold; align: center; width: 0.2; height:0.2; color: red; value:0; "></a-entity>
+                <a-entity id="GO" position="0 0 -0.05" text="font: exo2bold; align: center; width: 0.2; height:0.2; color: red; value:Game Over!; " visible="false"></a-entity>
+                <a-entity id="winner" position="0 -0.01 -0.05" text="font: exo2bold; align: center; width: 0.2; height:0.2; color: red; value:__Wins; "  visible="false"></a-entity>
+        </a-camera>
+        <a-entity id="play" play>
+            <a-box src="./assets/diff.jpg" normal-map="./assets/nm.jpg" width="3" depth="3" height="3" position="-2 0.9 15">
+                <a-entity id="t" text="font: exo2bold; align: center; width: 10; height:10; color: #a39999; value:Play; " position="0 0.3 1.55"></a-entity>
+            </a-box>
+        </a-entity>
+
+        <a-entity id="quit" quit>
+            <a-box src="./assets/diff.jpg" normal-map="./assets/nm.jpg" width="3" depth="3" height="3" position="2 0.9 15">
+                <a-entity id="t" text="font: exo2bold; align: center; width: 10; height:10; color: #a39999; value:Quit; " position="0 0.3 1.55"></a-entity>
+            </a-box>
+        </a-entity>
+        <a-plane src="./assets/diff.jpg" normal-map="./assets/nm.jpg" id="p1" width="6" height="5" position="-10 2 15" rotation="0 10 0">
+            <a-text text="font: exo2bold; align: center; width: 10; height:10; color: #ccbebe; value:Controls\nW,A,S,D to move\n Click to Collect Resource \n 1,2,3,4 to Fight;" position="0 0 0.1"></a-text>
+        </a-plane>
+
+        <a-plane src="./assets/diff.jpg" normal-map="./assets/nm.jpg" id="p2" width="6" height="5" position="10 2 15" rotation="0 -10 0">
+            <a-text text="font: exo2bold; align: center; width: 10; height:10; color: #ccbebe; value:A game by \n Yagya Jha & \n Teacher @ White Hat Jr.,\n Mrs. Kiran Burakoti ;" position="0 0 0.1"></a-text>
+        </a-plane>
+
+        <a-entity id="p3" text="font: exo2bold; align: center; width: 10; height:10; color: blue; value:Elemental;" position="-0.8 3 20"></a-entity>
+        <a-entity id="p4" text="font: exo2bold; align: center; width: 10; height:10; color: orange; value:Battle;" position="1 3 20"></a-entity>
+    </a-scene>
+</body>
+</html>
